@@ -205,6 +205,7 @@ class FeatureExtraction:
     # 13. RequestURL
     def RequestURL(self):
         try:
+            i,success = 0,0
             for img in self.soup.find_all('img', src=True):
                 dots = [x.start(0) for x in re.finditer('\.', img['src'])]
                 if self.url in img['src'] or self.domain in img['src'] or len(dots) == 1:
@@ -314,7 +315,7 @@ class FeatureExtraction:
     # 17. InfoEmail
     def InfoEmail(self):
         try:
-            if re.findall(r"[mail\(\)|mailto:?]", self.soap):
+            if re.findall(r"[mail\(\)|mailto:?]", self.soup):
                 return -1
             else:
                 return 1
