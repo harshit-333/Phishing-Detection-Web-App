@@ -7,8 +7,7 @@ import socket
 import requests
 from googlesearch import search
 import whois
-from datetime import date, datetime
-import time
+from datetime import date
 from dateutil.parser import parse as date_parse
 from urllib.parse import urlparse
 
